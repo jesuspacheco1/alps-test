@@ -1,0 +1,10 @@
+.filters {
+  padding: 1.4em 0;
+  display: flex;
+  .filter-item {
+    width: 260px;
+    &:first-child {
+      margin-right: 1em;
+    }
+  }
+}

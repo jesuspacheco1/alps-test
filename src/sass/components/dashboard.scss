@@ -1,0 +1,64 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em 1em;
+  grid-template-areas:
+    "card-1 card-2 card-3 chart"
+    "card-4 card-5 card-6 chart";
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: $borderRadius;
+  transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s;
+  justify-content: space-between;
+}
+
+.month-card {
+  .card-body {
+    padding: 1.5rem;
+    & > h6 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: $fontColor;
+    }
+
+    & > h2 {
+      margin-top: 0;
+      margin-bottom: -4px;
+      font-weight: 600;
+      font-size: 1.714rem;
+      color: $fontColor;
+    }
+    & > span {
+      font-size: 0.85rem;
+      &.green {
+        color: #22c55e;
+      }
+      &.red {
+        color: #a01f1f;
+      }
+    }
+  }
+}
+
+.all-months-card {
+  .card-header {
+    padding: 1rem 0.8rem 0;
+    border-bottom: 2px solid $backgroundColor;
+    margin-bottom: 2.3rem;
+    & > p {
+      margin-top: 0;
+      font-size: 1.285rem;
+    }
+  }
+}

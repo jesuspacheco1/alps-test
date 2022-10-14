@@ -1,0 +1,12 @@
+.select-label {
+  font-size: 0.857rem;
+  color: $fontColor;
+  margin-bottom: 0.2857rem;
+}
+
+.react-select {
+  .select__value-container {
+    overflow-y: auto;
+    max-height: 36px;
+  }
+}

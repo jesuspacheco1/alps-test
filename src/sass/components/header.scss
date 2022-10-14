@@ -1,0 +1,22 @@
+.header {
+  width: calc(100% - 292px);
+  margin-left: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.45rem;
+  padding: 0 1rem;
+}
+
+.header-content > h2 {
+  font-size: 1.7rem;
+  color: $fontColor;
+  font-weight: 500;
+}
+
+.header-menu {
+  margin-right: 0.5em;
+  > svg {
+    cursor: pointer;
+  }
+}
