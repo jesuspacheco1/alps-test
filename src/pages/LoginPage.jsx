@@ -34,7 +34,7 @@ const LoginPage = () => {
 
     if (!errors) {
       setSending(true);
-      const response = await setLogIn(data);
+      await setLogIn(data);
       setSending(false);
     }
   };

@@ -20,8 +20,8 @@ const Header = ({ openSidebar, setOpenSidebar, titlePage }) => {
       <div className="header-menu">
         <FontAwesomeIcon
           icon={faRightFromBracket}
-          style={{ fontSize: 25, color: "#636363" }}
           onClick={setLogOut}
+          className="logOut"
         />
       </div>
     </div>

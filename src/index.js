@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "./sass/index.scss";
 import { ToastContainer } from "react-toastify";
@@ -13,4 +12,3 @@ root.render(
     <ToastContainer position="bottom-right" newestOnTop />
   </React.StrictMode>
 );
-reportWebVitals();

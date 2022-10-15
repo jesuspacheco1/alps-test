@@ -1,5 +1,5 @@
 {
-  "name": "test-frontend",
+  "name": "test-alps",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://staging-payouts.alps.cl",
@@ -10,6 +10,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "apexcharts": "^3.36.0",
+    "axios": "^1.1.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -27,12 +28,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+    "env": {
+      "cypress/globals": true
+    },
+    "extends": "react-app",
+    "plugins": [
+      "cypress"
     ]
   },
   "browserslist": {
@@ -46,5 +52,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^10.10.0",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }
