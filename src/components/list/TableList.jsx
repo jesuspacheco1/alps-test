@@ -36,7 +36,7 @@ const TableList = ({ rows, indicator }) => {
               <td data-th={header[1]}>{r.fecha}</td>
               <td data-th={header[2]}>{formatIndicator(r.valor, indicator)}</td>
               <td data-th={header[3]}>
-                {!!(r.diff_with_prev !== null) ? (
+                {!!(r.diff_with_prev !== null && !isNaN(r.diff_with_prev)) ? (
                   r.diff_with_prev === 0 ? (
                     <span>=</span>
                   ) : (
