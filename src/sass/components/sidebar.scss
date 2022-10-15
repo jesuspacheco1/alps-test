@@ -118,4 +118,10 @@
   position: absolute;
   z-index: 1001;
   background: #00000059;
+  display: none;
+  @media (max-width: 1400px) {
+    & {
+      display: block;
+    }
+  }
 }
