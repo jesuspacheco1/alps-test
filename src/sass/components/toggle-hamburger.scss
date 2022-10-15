@@ -1,5 +1,4 @@
 .toggle-hamburger {
-  display: flex;
   flex-direction: column;
   gap: 0.45rem;
   width: 2.8rem;
@@ -7,6 +6,13 @@
   border: 0;
   background: transparent;
   cursor: pointer;
+  display: none;
+
+  @media (max-width: 1400px) {
+    & {
+      display: flex;
+    }
+  }
 
   > span {
     background: black;

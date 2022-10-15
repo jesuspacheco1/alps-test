@@ -6,12 +6,23 @@
   justify-content: space-between;
   height: 4.45rem;
   padding: 0 1rem;
+  transition: $layoutTransition;
+  @media (max-width: 1400px) {
+    & {
+      width: calc(100% - 32px);
+      margin-left: 0;
+    }
+  }
 }
 
-.header-content > h2 {
-  font-size: 1.7rem;
-  color: $fontColor;
-  font-weight: 500;
+.header-content {
+  display: flex;
+  align-items: center;
+  & > h2 {
+    font-size: 1.7rem;
+    color: $fontColor;
+    font-weight: 500;
+  }
 }
 
 .header-menu {

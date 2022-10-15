@@ -1,6 +1,6 @@
 .sidebar {
   width: 260px;
-  transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: $layoutTransition;
   background: #fff;
   box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
   position: fixed;
@@ -8,6 +8,33 @@
   display: table-cell;
   height: 100%;
   overflow: hidden;
+  z-index: 1002;
+
+  @media (max-width: 1400px) {
+    & {
+      position: absolute;
+      transform: translateX(0px);
+    }
+    &.collapsed {
+      transform: translateX(-260px);
+    }
+  }
+}
+
+.sidebar-close {
+  font-size: 1.2rem;
+  position: absolute;
+  font-weight: bold;
+  right: 0.5em;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+
+  @media (max-width: 1400px) {
+    & {
+      display: block;
+    }
+  }
 }
 
 .sidebar-header {
@@ -83,4 +110,12 @@
       }
     }
   }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1001;
+  background: #00000059;
 }

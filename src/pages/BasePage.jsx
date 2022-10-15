@@ -16,7 +16,7 @@ const BasePage = ({ Component, title, selected }) => {
   const [data, setData] = useState(defaultData);
   const [year, setYear] = useState(moment().format("YYYY"));
   const [indicator, setIndicator] = useState(IndicatorItems[0]);
-  const [openSidebar, setOpenSidebar] = useState(true);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -47,7 +47,7 @@ const BasePage = ({ Component, title, selected }) => {
   return (
     <div className="admin-container">
       {isFetching && <div className="loading-bar" />}
-      <Sidebar open={openSidebar} />
+      <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
       <Header
         titlePage={title}
         openSidebar={openSidebar}

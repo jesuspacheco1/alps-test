@@ -45,7 +45,13 @@
   margin-left: 260px;
   position: relative;
   transition: all 0.3s ease;
-  //min-height: calc(100% - 3.35rem);
+  overflow-x: hidden;
   min-height: calc(100vh - 98.9px);
-  overflow: hidden !important;
+  max-height: calc(100vh - 98.9px);
+  transition: $layoutTransition;
+  @media (max-width: 1400px) {
+    & {
+      margin-left: 0;
+    }
+  }
 }

@@ -1,11 +1,35 @@
 .dashboard-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 3fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1em 1em;
-  grid-template-areas:
-    "card-1 card-2 card-3 chart"
-    "card-4 card-5 card-6 chart";
+  display: flex;
+
+  & > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 60%;
+  }
+
+  & > div:last-child {
+    min-width: fit-content;
+    display: flex;
+    width: 40%;
+    padding: 0.5em;
+  }
+  @media (max-width: 1220px) {
+    & {
+      flex-direction: column;
+    }
+
+    & > div:first-child {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      max-width: 100%;
+    }
+
+    & > div:last-child {
+      width: 100%;
+    }
+  }
 }
 
 .card {
@@ -21,6 +45,23 @@
 }
 
 .month-card {
+  max-height: 224px;
+  min-width: 200px;
+  width: calc(33.33% - 1em);
+  margin: 0.5em;
+
+  @media (max-width: 697px) {
+    & {
+      width: calc(50% - 1em);
+    }
+  }
+
+  @media (max-width: 464px) {
+    & {
+      width: calc(100% - 1em);
+    }
+  }
+
   .card-body {
     padding: 1.5rem;
     & > h6 {
@@ -52,6 +93,8 @@
 }
 
 .all-months-card {
+  max-height: fit-content;
+  width: 100%;
   .card-header {
     padding: 1rem 0.8rem 0;
     border-bottom: 2px solid $backgroundColor;
