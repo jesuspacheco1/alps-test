@@ -1,5 +1,5 @@
-import moment from "moment";
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 import StatiscticsAllMonthsCard from "../components/dashboard/StatiscticsAllMonthsCard";
 import StatiscticsMonthCard from "../components/dashboard/StatiscticsMonthCard";
 import { groupDataByMonth, groupDataByWeek } from "../utility/utils";
@@ -40,40 +40,52 @@ const DashboardPage = ({ obj, indicator, year }) => {
   return (
     <div className="dashboard-container">
       <div>
-        {data.months.slice(0, 6).map((item, idx) => (
-          <StatiscticsMonthCard
-            key={idx}
-            title={item.name}
-            average={item.total_month_avg}
-            style={{ gridArea: `card-${idx + 1}` }}
-            labels={
-              !!indicator.mensual
-                ? [
-                    "01/04",
-                    moment(`${year}-${item.num}-01`)
-                      .endOf("month")
-                      .format("DD/MM"),
-                  ]
-                : item.weeks.map((w) => w.name)
-            }
-            diff={item.diff_with_prev}
-            indicator={indicator}
-            series={[
-              {
-                name: "Promedio",
-                data: !!indicator.mensual
-                  ? Array(2).fill(Math.round(item.total_month_avg * 100) / 100)
-                  : item.weeks.map(
-                      (w) => Math.round(w.total_week_avg * 100) / 100
-                    ),
-              },
-            ]}
-          />
-        ))}
+        {!!data.months.length
+          ? data.months.slice(0, 6).map((item, idx) => (
+              <StatiscticsMonthCard
+                key={idx}
+                title={item.name}
+                average={item.total_month_avg}
+                labels={
+                  !!indicator.mensual
+                    ? [
+                        `01/${item.num}`,
+                        moment(`${year}-${item.num}-01`)
+                          .endOf("month")
+                          .format("DD/MM"),
+                      ]
+                    : item.weeks.map((w) => w.name)
+                }
+                diff={item.diff_with_prev}
+                indicator={indicator}
+                series={[
+                  {
+                    name: "Promedio",
+                    data: !!indicator.mensual
+                      ? Array(2).fill(
+                          Math.round(item.total_month_avg * 100) / 100
+                        )
+                      : item.weeks.map(
+                          (w) => Math.round(w.total_week_avg * 100) / 100
+                        ),
+                  },
+                ]}
+              />
+            ))
+          : Array.from({ length: 6 }, (item, idx) => (
+              <StatiscticsMonthCard
+                key={idx}
+                title=""
+                average={0}
+                labels={[]}
+                diff={null}
+                indicator={indicator}
+                series={[]}
+              />
+            ))}
       </div>
       <div>
         <StatiscticsAllMonthsCard
-          style={{ gridArea: "chart" }}
           average={
             !!data.total_avg ? Math.round(data.total_avg * 100) / 100 : 0
           }
