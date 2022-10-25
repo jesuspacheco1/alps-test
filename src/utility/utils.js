@@ -31,13 +31,13 @@ export const IndicatorItems = [
   },
   {
     value: "dolar",
-    label: "Dólar observado",
+    label: "Dólares observado",
     unidad_medida: "Pesos",
     mensual: 0,
   },
   {
     value: "dolar_intercambio",
-    label: "Dólar acuerdo",
+    label: "Dólares acuerdo",
     unidad_medida: "Pesos",
     mensual: 0,
   },
@@ -74,7 +74,7 @@ export const IndicatorItems = [
   {
     value: "libra_cobre",
     label: "Libra de Cobre",
-    unidad_medida: "Dólar",
+    unidad_medida: "Dólares",
     mensual: 0,
   },
   {
@@ -85,8 +85,8 @@ export const IndicatorItems = [
   },
   {
     value: "bitcoin",
-    label: "Bitcoin",
-    unidad_medida: "Dólar",
+    label: "Bitcoin (BTC)",
+    unidad_medida: "Dólares",
     mensual: 0,
   },
 ];
@@ -98,7 +98,7 @@ export const emailValidator = (text) => {
 };
 
 export const formatIndicator = (value, indicator) => {
-  const symbol = ["Pesos", "Dólar"].includes(indicator.unidad_medida)
+  const symbol = ["Pesos", "Dólares"].includes(indicator.unidad_medida)
     ? "$"
     : "%";
   return `${Math.round(value * 100) / 100}${symbol}`;
