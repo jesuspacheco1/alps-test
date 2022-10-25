@@ -98,7 +98,7 @@ export const emailValidator = (text) => {
 };
 
 export const formatIndicator = (value, indicator) => {
-  const symbol = ["Pesos", "Dólar"].includes(indicator.unidad_medida)
+  const symbol = ["Pesos", "Dólares"].includes(indicator.unidad_medida)
     ? "$"
     : "%";
   return `${Math.round(value * 100) / 100}${symbol}`;
