@@ -85,7 +85,7 @@ export const IndicatorItems = [
   },
   {
     value: "bitcoin",
-    label: "Bitcoin",
+    label: "Bitcoin (BTC)",
     unidad_medida: "Dólares",
     mensual: 0,
   },
