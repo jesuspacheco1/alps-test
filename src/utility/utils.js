@@ -31,13 +31,13 @@ export const IndicatorItems = [
   },
   {
     value: "dolar",
-    label: "Dólar observado",
+    label: "Dólares observado",
     unidad_medida: "Pesos",
     mensual: 0,
   },
   {
     value: "dolar_intercambio",
-    label: "Dólar acuerdo",
+    label: "Dólares acuerdo",
     unidad_medida: "Pesos",
     mensual: 0,
   },
@@ -74,7 +74,7 @@ export const IndicatorItems = [
   {
     value: "libra_cobre",
     label: "Libra de Cobre",
-    unidad_medida: "Dólar",
+    unidad_medida: "Dólares",
     mensual: 0,
   },
   {
@@ -86,7 +86,7 @@ export const IndicatorItems = [
   {
     value: "bitcoin",
     label: "Bitcoin",
-    unidad_medida: "Dólar",
+    unidad_medida: "Dólares",
     mensual: 0,
   },
 ];
